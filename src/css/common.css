@@ -16,3 +16,21 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button{
+background-color:darkcyan;
+color: white;
+border-radius: 15px;
+}
+.timer{
+	display: flex;
+	margin-top: 10px;
+}
+.field{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.field + .field{
+	margin-left: 20px;
+}
