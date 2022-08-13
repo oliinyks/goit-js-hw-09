@@ -35,12 +35,7 @@ buttonStart.addEventListener('click', onButtonClick);
 buttonStart.disabled = true;
 
 function onButtonClick() {
-  let isActive = false;
-
-  if (isActive) {
-    return;
-  }
-  isActive = true;
+  let isActive = true;
 
   intervalId = setInterval(() => {
     const deltaTime = selectData - new Date().getTime();
@@ -49,8 +44,8 @@ function onButtonClick() {
       clearInterval(intervalId);
       isActive = false;
       return;
-	 }
-	  
+    }
+
     const time = convertMs(deltaTime);
     updateClockInfo(time);
   }, 1000);

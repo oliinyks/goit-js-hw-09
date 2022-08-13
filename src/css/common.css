@@ -34,3 +34,6 @@ border-radius: 15px;
 .field + .field{
 	margin-left: 20px;
 }
+button[disabled=disabled], button:disabled {
+   background-color: darkgray;
+}
