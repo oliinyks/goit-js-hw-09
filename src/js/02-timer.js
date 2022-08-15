@@ -17,15 +17,16 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
+	onClose(selectedDates) {
     selectData = selectedDates[0].getTime();
 
     if (selectData < new Date()) {
       Notify.failure('Please choose a date in the future');
-      buttonStart.disabled = true;
+		 buttonStart.disabled = true;
+		 updateClockInfo(convertMs(0));
       return;
     }
-    buttonStart.disabled = false;
+		buttonStart.disabled = false;
   },
 };
 
@@ -36,7 +37,8 @@ buttonStart.disabled = true;
 
 function onButtonClick() {
   let isActive = true;
-
+	buttonStart.disabled = true;
+	
   intervalId = setInterval(() => {
     const deltaTime = selectData - new Date().getTime();
 
